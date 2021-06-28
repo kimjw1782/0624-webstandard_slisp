@@ -10,13 +10,13 @@
 .wrap { }
 .header{height: 325px; background: #111; background: url(../img/header_bg.jpg) center top repeat-x;}
 .contents{}
-.footer {  height: 200px; background: #333; }
+.footer {border-top: 1px solid #eee;}
 
 /* 컨텐츠 레이아웃 */
-.cont_nav { background-color: #f6fdff;}
+.cont_nav { background-color: #f6fdff; display: none;}
 .cont_tit {background-color: #EAF7FD;}
 .cont_ban {background-color: #dceff7; }
-.cont_cont {background-color: #f6fdff; }
+.cont_cont {background-color: #f6fdff;}
 
 /* 컨테이너 */
 .container { width: 990px; margin: 0 auto; height: inherit; background: rgba(255,255,255,0.3);}
@@ -54,9 +54,10 @@
 .tit{ position: relative;}
 .tit h2{font-size: 40px; text-align: center; padding: 5px 0; letter-spacing: 2px; color: #2c94c4; font-family: 'Nanum Brush Script', cursive; }
 .tit .btn{position: absolute; top: 5px; right: 0; width: 60px; height: 60px; background: url(../img/icon.png) no-repeat 0 -600px;}
+.tit .btn.on {background-position: 0 -660px;}
 
 /*  배너 */
-.cont_ban .ban{ position: relative; padding: 24px 0  20px;}
+/* .cont_ban .ban{ position: relative; padding: 24px 0  20px;}
 .cont_ban .ban a.prev{ position: absolute; left: -80px; top: 60px; width: 43px; height: 43px; background: url(../img/icon.png) no-repeat -150px 0;}
 .cont_ban .ban a.prev:hover{background-position: -193px 0;}
 .cont_ban .ban a.next{ position: absolute; right: -80px; top: 60px; width: 43px; height: 43px; background: url(../img/icon.png) no-repeat -150px -43px;}
@@ -67,7 +68,21 @@
 .cont_ban .ban ul li.ban_img2{text-align: center;}
 .cont_ban .ban ul li.ban_img3{text-align: right;}
 .cont_ban .ban img{ border: 4px solid #dcdcdc;}
-.cont_ban .ban img:hover{border-color: #95dcdc;}
+.cont_ban .ban img:hover{border-color: #95dcdc;} */
+
+/* 슬릭 배너 */
+.ban{position: relative; padding: 24px 0  40px;}
+.ban .slick-prev {position: absolute; left: -80px; top: 80px; width: 43px; height: 43px; background: url(../img/icon.png) no-repeat -150px 0; text-indent: -9999px;}
+.ban .slick-next { position: absolute; right: -80px; top: 80px; width: 43px; height: 43px; background: url(../img/icon.png) no-repeat -150px -43px; text-indent: -9999px;}
+.ban .slick-prev:hover{background-position: -193px 0;}
+.ban .slick-next:hpver{background-position: -193px -43px;}
+.ban img{ border: 4px solid #dcdcdc;}
+.ban img:hover{border-color: #95dcdc;}
+.ban .slick-slide {margin: 15px;}
+.ban .slick-dots {position: absolute; bottom: 15px; display: block; width: 100%; text-align: center;}
+.ban .slick-dots li{display: inline-block; width: 15px; height: 15px; margin: 5px;}
+.ban .slick-dots li button{font-size: 0; line-height: 0; display: block; width: 15px; height: 15px; cursor: pointer; background: #5dbfeb; border-radius: 50%;}
+.ban .slick-dots li.slick-active button{background: #2b91c8;}
 
 /* 컨텐츠 */
 .cont_cont .cont{ overflow: hidden; padding-top: 30px;}
@@ -142,7 +157,7 @@
 .notice_hover ul li a strong{ display: inline-block; padding-top: 3px; font-size: 12px;}
 
 /* 로그인 */
-.login_wrqp{}
+.login_wrqp{margin-bottom: 15px;}
 .login_wrqp #login_form{background: #f2f4f5; padding: 15px;}
 #login_form .login_header{ overflow: hidden; font-size: 12px; height: 30px;}
  .login_header .lh_check{ float: left; padding-right: 15px;}
@@ -155,6 +170,15 @@
 #login_form .login_footer{margin-top: 5px;}
 #login_form .login_footer ul li{display: inline;}
 #login_form .login_footer ul li a{font-size: 12px;}
+
+/*  팝업  */
+.popup{}
+.popup h4{font-size: 14px; color: #0093bd; padding-bottom: 4px; font-weight: 700;}
+.popup ul{overflow: hidden;}
+.popup ul li{float: left; width: 93px; margin-right: 5px;}
+.popup ul li.last{margin-right: 0;}
+.popup ul li img{width: 100%;}
+
 
 
 /*  마우스 호버효과 2 */
@@ -219,10 +243,13 @@
 .gallery .gallery_btn ul li.gb_icon4 a:hover{background-position: -173px -120px;}
 .gallery .gallery_img ul li a img{width: 100%;}
 
-
-
-
-
+/*  푸터 */
+.footer_wrap{padding: 25px 0; text-align: center;}
+.footer_wrap ul {margin-bottom: 20px;}
+.footer_wrap ul li{position: relative; display: inline; padding: 0 7px 10px;} /* float:left를 사용하면 위의 text_align:centet가 안먹기 때문에 인라인을 줘서 줄바꿈 되지 않도록 함 */
+.footer_wrap ul li::before{ content:""; width: 1px; height: 12px; background: #ccc; position: absolute; left: 0; top: 2px; }
+.footer_wrap ul li:first-child::before{width: 0; height: 0;}
+.footer_wrap .w3c{margin-top: 15px;}
 
 
 
